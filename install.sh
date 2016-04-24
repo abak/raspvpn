@@ -25,7 +25,7 @@ echo $vpn_username >> etc/openvpn/openvpn.login
 echo $vpn_password >> etc/openvpn/openvpn.login
 
 # create new openvpn config file
-cat $1 | sed -e "s/auth-user-pass/auth-user-pass //etc//openvpn//openvpn.login/" > etc/openvpn/configuration
+cat $1 | sed -e "s@auth-user-pass@auth-user-pass /etc/openvpn/openvpn.login@" > etc/openvpn/configuration
 
 # copy files 
 # sudo cp --parents etc/default/hostapd /
